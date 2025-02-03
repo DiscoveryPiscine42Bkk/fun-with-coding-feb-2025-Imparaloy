@@ -5,4 +5,4 @@ else
         mkdir "ex${arg}"
     done
 fi
-chmod +x build.shø
+chmod +x build.sh
