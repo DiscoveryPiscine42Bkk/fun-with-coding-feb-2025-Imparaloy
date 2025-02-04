@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +41,7 @@
                 transform: scale(1);
                 opacity: 1;
             }
+
             100% {
                 transform: scale(2);
                 opacity: 0;
@@ -47,6 +49,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="balloon"></div>
 
@@ -66,18 +69,21 @@
         // On click event: Grow the balloon and change its color
         balloon.onclick = function () {
             if (size < 420) {
-                size += 10;
-                colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
+                size = Math.min(size + 10, 420);
+                colorIndex = (colorIndex + 1) % colors.length;
             } else {
-                // Balloon "explodes" and resets to the original size
-                balloon.classList.add('explode');
-                setTimeout(() => {
-                    balloon.classList.remove('explode');
-                    size = 200;
-                    colorIndex = 0; // Reset color to red
-                    updateBalloon();
-                }, 500);
+                if (!balloon.classList.contains('explode')) {
+                    balloon.classList.add('explode');
+                    setTimeout(() => {
+                        balloon.classList.remove('explode');
+                        size = 200;
+                        colorIndex = 0;
+                        updateBalloon();
+                    }, 500);
+                }
+                return;
             }
+
             updateBalloon();
         }
 
@@ -93,4 +99,5 @@
         updateBalloon();
     </script>
 </body>
+
 </html>
