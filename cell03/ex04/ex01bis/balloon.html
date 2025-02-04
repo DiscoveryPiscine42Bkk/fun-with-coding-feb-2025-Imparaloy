@@ -68,7 +68,7 @@
 
            // On click event: Grow the balloon and change its color
            $('#balloon').click(function() {
-               if (size < 420) {
+               if (size+10 < 420) {
                    size += 10;
                    colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
                } else {

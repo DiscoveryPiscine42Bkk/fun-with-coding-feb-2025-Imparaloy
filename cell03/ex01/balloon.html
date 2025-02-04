@@ -68,22 +68,19 @@
 
         // On click event: Grow the balloon and change its color
         balloon.onclick = function () {
-            if (size < 420) {
-                size = Math.min(size + 10, 420);
+
+            if (size+10 < 420) {
+                size += 10;
                 colorIndex = (colorIndex + 1) % colors.length;
             } else {
-                if (!balloon.classList.contains('explode')) {
-                    balloon.classList.add('explode');
-                    setTimeout(() => {
-                        balloon.classList.remove('explode');
-                        size = 200;
-                        colorIndex = 0;
-                        updateBalloon();
-                    }, 500);
-                }
-                return;
+                balloon.classList.add('explode');
+                setTimeout(() => {
+                    balloon.classList.remove('explode');
+                    size = 200;
+                    colorIndex = 0;
+                    updateBalloon();
+                }, 500);
             }
-
             updateBalloon();
         }
 
