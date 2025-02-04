@@ -57,8 +57,8 @@
        $(document).ready(function() {
            // Function to validate if the input is a positive integer
            function isPositiveInteger(value) {
-               return /^\d+$/.test(value) && parseInt(value) >= 0;
-           }
+            return Number.isInteger(+value) && +value >= 0;
+        }        
 
            // Function to perform the calculation
            $('#calculate').click(function() {

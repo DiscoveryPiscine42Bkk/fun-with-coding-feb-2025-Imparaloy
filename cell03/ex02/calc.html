@@ -54,8 +54,8 @@
 
     <script>
         function isPositiveInteger(value) {
-            return /^\d+$/.test(value) && parseInt(value) >= 0;
-        }
+            return Number.isInteger(+value) && +value >= 0;
+        }        
 
         function calculate() {
             const left = document.getElementById('leftInput').value;
