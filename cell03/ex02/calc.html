@@ -53,12 +53,10 @@
     </div>
 
     <script>
-        // Function to validate if the input is a positive integer
         function isPositiveInteger(value) {
             return /^\d+$/.test(value) && parseInt(value) >= 0;
         }
 
-        // Function to perform the calculation
         function calculate() {
             const left = document.getElementById('leftInput').value;
             const right = document.getElementById('rightInput').value;
@@ -103,7 +101,6 @@
                     result = 'Invalid operator';
             }
 
-            // Display the result
             alert(`Result: ${result}`);
             console.log(`Result: ${result}`);
         }
