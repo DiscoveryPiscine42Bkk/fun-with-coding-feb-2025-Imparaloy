@@ -26,7 +26,7 @@ function loadCookies() {
         try {
             TodoList = JSON.parse(decodeURIComponent(todoCookie.split('=')[1]))
         } catch (e) {
-            TodoList = []  // Reset if corrupted
+            TodoList = []
         }
     }
 }
