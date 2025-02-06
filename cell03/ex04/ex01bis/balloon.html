@@ -57,7 +57,6 @@
            let colors = ['red', 'green', 'blue'];
            let colorIndex = 0;
 
-           // Function to update the balloon's size and color
            function updateBalloon() {
                $('#balloon').css({
                    'width': size + 'px',
@@ -66,29 +65,26 @@
                });
            }
 
-           // On click event: Grow the balloon and change its color
            $('#balloon').click(function() {
                if (size+10 < 420) {
                    size += 10;
-                   colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
+                   colorIndex = (colorIndex + 1) % colors.length;
                } else {
-                   // Balloon "explodes" and resets to the original size
                    $(this).addClass('explode');
                    setTimeout(() => {
                        $(this).removeClass('explode');
                        size = 200;
-                       colorIndex = 0; // Reset color to red
+                       colorIndex = 0;
                        updateBalloon();
                    }, 500);
                }
                updateBalloon();
            });
 
-           // On mouseleave event: Shrink the balloon and reverse color order
            $('#balloon').mouseleave(function() {
                if (size > 200) {
                    size -= 5;
-                   colorIndex = (colorIndex - 1 + colors.length) % colors.length; // Reverse color cycle
+                   colorIndex = (colorIndex - 1 + colors.length) % colors.length;
                    updateBalloon();
                }
            });

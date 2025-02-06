@@ -49,7 +49,6 @@ $(document).ready(function () {
         }
     });
 
-    // Load & render todos on page load
     loadCookies();
     render();
 });

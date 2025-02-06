@@ -55,18 +55,15 @@
 
    <script>
        $(document).ready(function() {
-           // Function to validate if the input is a positive integer
            function isPositiveInteger(value) {
-            return Number.isInteger(+value) && +value >= 0;
+            return Number.isInteger(+value) && +value >= 0; 
         }        
 
-           // Function to perform the calculation
            $('#calculate').click(function() {
                const left = $('#leftInput').val();
                const right = $('#rightInput').val();
                const operator = $('#operator').val();
 
-               // Validate inputs
                if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
                    alert('Error :(');
                    console.log('Error :(');
@@ -76,14 +73,12 @@
                const numLeft = parseInt(left);
                const numRight = parseInt(right);
 
-               // Handle division and modulo by zero
                if ((operator === '/' || operator === '%') && numRight === 0) {
                    alert("It's over 9000!");
                    console.log("It's over 9000!");
                    return;
                }
 
-               // Perform the calculation
                let result;
                switch (operator) {
                    case '+':
@@ -105,12 +100,10 @@
                        result = 'Invalid operator';
                }
 
-               // Display the result
                alert(`Result: ${result}`);
                console.log(`Result: ${result}`);
            });
 
-           // Function to show a reminder every 30 seconds
            setInterval(() => {
                alert('Please, use me...');
            }, 30000);
