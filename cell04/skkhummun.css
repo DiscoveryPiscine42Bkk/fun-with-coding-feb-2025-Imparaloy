@@ -90,7 +90,7 @@ main {
     justify-content: space-between;
     max-width: 900px;
     width: 100%;
-    gap: 2rem; /* ระยะห่างระหว่างข้อความและรูป */
+    gap: 2rem;
 }
 
 .text-content {
@@ -194,7 +194,6 @@ h3 {
 .work .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Responsive grid */
     gap: 1.5rem;
     padding: 0 1rem;
 }
